@@ -11,10 +11,10 @@ public class Main {
 
         // SpeakerService service = new SpeakerServiceImpl();
         SpeakerService service1 = appContext.getBean("speakerService",SpeakerService.class);
-        //System.out.println(service1.hashCode());
+        System.out.println(service1.hashCode());
 
-//        SpeakerService service2 = appContext.getBean("speakerService",SpeakerService.class);
-//        System.out.println(service2.hashCode());
+        SpeakerService service2 = appContext.getBean("speakerService",SpeakerService.class);
+        System.out.println(service2.hashCode());
 
         System.out.println(service1.findAll());
     }

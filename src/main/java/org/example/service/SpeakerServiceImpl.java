@@ -2,7 +2,7 @@ package org.example.service;
 
 import org.example.model.Speaker;
 import org.example.repository.SpeakerRepository;
-import org.example.repository.SpeakerRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -10,11 +10,18 @@ public class SpeakerServiceImpl implements SpeakerService {
 
     private SpeakerRepository repository;
 
+    public SpeakerServiceImpl() {
+        System.out.println("SpeakerServiceImpl NO-ARGS constructor");
+    }
+
     public SpeakerServiceImpl(SpeakerRepository repository) {
+        System.out.println("SpeakerServiceImpl args constructor");
         this.repository = repository;
     }
 
+    @Autowired
     public void setRepository(SpeakerRepository repository) {
+        System.out.println("SpeakerServiceImpl setter");
         this.repository = repository;
     }
 
