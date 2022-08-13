@@ -10,8 +10,12 @@ public class Main {
         ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         // SpeakerService service = new SpeakerServiceImpl();
-        SpeakerService service = appContext.getBean("speakerService",SpeakerService.class);
+        SpeakerService service1 = appContext.getBean("speakerService",SpeakerService.class);
+        //System.out.println(service1.hashCode());
 
-        System.out.println(service.findAll());
+//        SpeakerService service2 = appContext.getBean("speakerService",SpeakerService.class);
+//        System.out.println(service2.hashCode());
+
+        System.out.println(service1.findAll());
     }
 }
